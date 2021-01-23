@@ -1,0 +1,93 @@
+package login;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+public class reservation extends JFrame implements ActionListener {
+	
+	JLabel l1,l2,date,month1,year;
+	 JComboBox com1,com2,comdate,commonth,comyear;
+	 
+	
+	
+	reservation()
+	{
+		setTitle("reservation");
+		setResizable(false);
+		setLayout(null);
+		setBounds(350, 225, 800, 480);
+		
+		String from[]= {"MUMBAI","THANE","AIROLI","RABALE","GHANSOLI","KOPARKHAIRANE","TURBHE","JUINAGAR","NERUL","SEAWOODS","BELAPUR","KHARGHAR","MANSAROVAR","KHANDESHWAR","PANVEL"};
+		
+		String to[]= {"MUMBAI","THANE","AIROLI","RABALE","GHANSOLI","KOPARKHAIRANE","TURBHE","JUINAGAR","NERUL","SEAWOODS","BELAPUR","KHARGHAR","MANSAROVAR","KHANDESHWAR","PANVEL"};
+		String month[]= {"JAN","FEB","MAR","APR","MAY","JUN","JULY","AUG","SEP","OCT","NOV","DEC"}; 
+		
+		comdate=new JComboBox();
+		comyear=new JComboBox();
+		for(int i=1;i<31;i++)
+	    {
+		   comdate.addItem(i);
+		}
+		for(int j=2020;j>=1970;j--)
+		{
+			comyear.addItem(j);
+		}
+		
+		
+		
+		l1=new JLabel("FROM");
+		l2=new JLabel("TO");
+		date=new JLabel("Date");
+		month1=new JLabel("Month");
+		year=new JLabel("Year");
+		com1=new JComboBox(from);
+		com2=new JComboBox(to);
+		
+		
+		commonth=new JComboBox(month);
+		
+	
+		add(l1);
+		add(l2);
+		add(date);
+		add(month1);
+	//	add(year);
+		add(com1);
+		add(com2);
+		add(comdate);
+		add(commonth);
+		add(comyear);
+		
+		l1.setBounds(40, 25, 150, 30);
+		com1.setBounds(110, 25, 150, 30);
+		l2.setBounds(310, 25, 150,30);
+		com2.setBounds(350, 25, 150, 30);
+		
+		comdate.setBounds(110, 90, 50, 30);
+		date.setBounds(75, 90, 60, 30);
+		
+		commonth.setBounds(210, 90, 70, 30);
+		month1.setBounds(170, 90, 70, 30);
+		
+		comyear.setBounds(335, 90, 90, 30);
+		//year.setBounds(270, 90, 90, 30);
+		
+		
+		
+		
+		
+		
+		
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

@@ -1,0 +1,285 @@
+package login;
+
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+
+
+
+
+public class reservation extends JFrame implements ActionListener {
+	 JTextField namet,mobilet;
+	 JLabel l1,l2,date,month1,year,bustimeing,bg2,name,mobile;
+	 JComboBox com1,com2,comdate,commonth,comyear,bustime;
+	 JButton back,submit,update;
+	 JCheckBox a,b,cc,d,ee,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,a1,b2,c3,d4,e5,f6,g7,h8,i9,j10;
+	
+	
+	reservation()
+	{
+		setTitle("reservation");
+		setResizable(false);
+		setLayout(null);
+		setBounds(350, 225, 800, 480);
+		Container c=getContentPane();
+	
+		 
+	  
+		String from[]= {"MUMBAI","THANE","AIROLI","RABALE","GHANSOLI","KOPARKHAIRANE","TURBHE","JUINAGAR","NERUL","SEAWOODS","BELAPUR","KHARGHAR","MANSAROVAR","KHANDESHWAR","PANVEL"};
+		
+		String to[]= {"MUMBAI","THANE","AIROLI","RABALE","GHANSOLI","KOPARKHAIRANE","TURBHE","JUINAGAR","NERUL","SEAWOODS","BELAPUR","KHARGHAR","MANSAROVAR","KHANDESHWAR","PANVEL"};
+		String month[]= {"JAN","FEB","MAR","APR","MAY","JUN","JULY","AUG","SEP","OCT","NOV","DEC"}; 
+		
+		comdate=new JComboBox();
+		comyear=new JComboBox();
+		
+		
+		for(int i=1;i<31;i++)
+	    {
+		   comdate.addItem(i);
+		}
+		for(int j=2019;j<=2030;j++)
+		{
+			comyear.addItem(j);
+		}
+		
+		  ImageIcon bgicon2=new ImageIcon("C:\\Users\\Hp\\Documents\\Apple\\Busmanagement\\src\\login\\set.png");
+		     bg2=new JLabel(bgicon2,JLabel.CENTER);
+			
+		
+		l1=new JLabel("FROM");
+		l2=new JLabel("TO");
+		date=new JLabel("Date");
+		month1=new JLabel("Month");
+		year=new JLabel("Year");
+		
+		name=new JLabel("NAME :");
+		mobile=new JLabel("MOBILE NO :");
+		namet=new JTextField(15);
+		mobilet=new JTextField(10);
+		
+		bustimeing =new JLabel("Select Bus From List :");
+		com1=new JComboBox(from);
+		com2=new JComboBox(to);
+		commonth=new JComboBox(month);
+		back=new JButton("back");
+		
+		update=new JButton("click for update");
+		
+		
+		submit=new JButton("SUBMIT");
+		
+		submit.addActionListener(this);
+		
+		bustime=new JComboBox();
+		bustime.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				try
+				{
+					Class.forName("com.mysql.cj.jdbc.Driver");
+					Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/updatetable","root","root");
+					
+					PreparedStatement pst1=con.prepareStatement("select * from dataupdate");
+				
+					ResultSet rs=pst1.executeQuery();
+					while(rs.next())
+					{
+						bustime.addItem(rs.getString("busno"));
+					}
+				
+				
+			}catch(Exception x)
+				{
+				//
+				}
+				
+			}
+		});
+        
+	
+		
+		a=new JCheckBox("A");b=new JCheckBox("B");cc=new JCheckBox("C");d=new JCheckBox("D");ee=new JCheckBox("E");
+		f=new JCheckBox("F");g=new JCheckBox("G");h=new JCheckBox("H");i=new JCheckBox("I");j=new JCheckBox("J");
+		k=new JCheckBox("K");l=new JCheckBox("L");m=new JCheckBox("M");n=new JCheckBox("N");	o=new JCheckBox("O");
+		p=new JCheckBox("P");q=new JCheckBox("Q");r=new JCheckBox("R");s=new JCheckBox("S");t=new JCheckBox("T");
+		u=new JCheckBox("U");v=new JCheckBox("V");w=new JCheckBox("W");x=new JCheckBox("X");y=new JCheckBox("Y");
+		z=new JCheckBox("Z");a1=new JCheckBox("1"); b2=new JCheckBox("2");c3=new JCheckBox("3");d4=new JCheckBox("4");
+		e5=new JCheckBox("5"); f6=new JCheckBox("6");g7=new JCheckBox("7");h8=new JCheckBox("8");i9=new JCheckBox("9");j10=new JCheckBox("10");
+		
+	
+		
+	
+		
+	    add(update);
+		add(l1);
+		add(l2);
+		add(date);
+		add(bg2);
+		add(month1);
+		add(year);
+		add(com1);
+		add(com2);
+		add(comdate);
+		add(commonth);
+		add(comyear);
+		add(bustime);
+		add(bustimeing);
+		add(back);
+		add(submit);
+		add(namet);
+		add(mobilet);
+		add(name);
+		add(mobile);
+		
+		add(a);add(b);add(cc);add(d);add(ee);
+		add(f);add(g);add(h);add(i);add(j);
+		add(k);add(l);add(m);add(n);add(o);
+		add(p);add(q);add(r);add(s);add(t);
+		add(u);add(v);add(w);add(x);add(y);
+		add(z);add(a1);add(b2);add(c3);add(d4);
+		add(e5);add(f6);add(g7);add(h8);add(i9);
+		add(j10);
+		
+		
+		l1.setBounds(40, 25, 150, 30);
+		com1.setBounds(110, 25, 150, 30);
+		l2.setBounds(310, 25, 150,30);
+		com2.setBounds(350, 25, 150, 30);
+		
+		comdate.setBounds(110, 90, 50, 30);
+		date.setBounds(75, 90, 60, 30);
+		
+		commonth.setBounds(210, 90, 70, 30);
+		month1.setBounds(170, 90, 70, 30);
+		
+		comyear.setBounds(320, 90, 90, 30);
+		year.setBounds(290, 90, 90, 30);
+		
+		bustimeing .setBounds(430, 90, 150, 30);
+		bustime.setBounds(560, 90, 210, 30);
+	
+		bg2.setBounds(10, 120,500, 300);
+		back.setBounds(640,400, 100, 30);
+		submit.setBounds(520,400, 100, 30);
+		update.setBounds(590,60 ,130, 25);
+		
+		update.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				try
+				{
+					Class.forName("com.mysql.cj.jdbc.Driver");
+					Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/dataupdate","root","root");
+					Statement st=con.createStatement();
+					PreparedStatement pst1=con.prepareStatement("select * from updatetable");
+					ResultSet rs=pst1.executeQuery();
+					while(rs.next())
+					{
+						bustime.addItem(rs.getString("busno")+"::"+rs.getString("bustype")+"::"+rs.getString("bustime"));
+					}
+//				
+				
+			}catch(Exception x)
+				{
+				//
+				}
+				
+			}
+		});
+		
+		name.setBounds(75, 140, 50, 50);
+		namet.setBounds(120, 155, 150, 25);
+		mobile.setBounds(330, 140, 80, 50);
+		mobilet.setBounds(410, 155, 150, 25);
+		
+		
+		
+		
+		back.addActionListener(this);
+		
+		a.setBounds(440, 180, 40, 50);b.setBounds(480, 180, 40, 50);cc.setBounds(520, 180, 40, 50);d.setBounds(560, 180, 40, 50);
+		ee.setBounds(600, 180, 40, 50);f.setBounds(640, 180, 40, 50);g.setBounds(680, 180, 40, 50);h.setBounds(720, 180, 40, 50);
+		
+		i.setBounds(440, 215, 40, 50);j.setBounds(480, 215, 40, 50);k.setBounds(520, 215, 40, 50);l.setBounds(560, 215, 40, 50);
+		m.setBounds(600, 215, 40, 50);n.setBounds(640, 215, 40, 50);o.setBounds(680, 215, 40, 50);p.setBounds(720, 215, 40, 50);
+		
+		q.setBounds(440, 250, 40, 50);r.setBounds(480, 250, 40, 50);s.setBounds(520, 250, 40, 50);t.setBounds(560, 250, 40, 50);
+		u.setBounds(600, 250, 40, 50);v.setBounds(640, 250, 40, 50);w.setBounds(680, 250, 40, 50);x.setBounds(720, 250, 40, 50);
+		
+		y.setBounds(440, 285, 40, 50);z.setBounds(480, 285, 40, 50);a1.setBounds(520, 285, 40, 50);b2.setBounds(560, 285, 40, 50);
+		c3.setBounds(600, 285, 40, 50);d4.setBounds(640, 285, 40, 50);e5.setBounds(680, 285, 40, 50);f6.setBounds(720, 285, 40, 50);
+		
+		g7.setBounds(440, 320, 40, 50);h8.setBounds(480, 320, 40, 50);i9.setBounds(520, 320, 40, 50);j10.setBounds(560, 320, 40, 50);
+		
+		
+		 submit.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+				String fromdata=com1.getSelectedItem().toString();//
+				String todata=com2.getSelectedItem().toString();//
+				
+				String day=comdate.getSelectedItem().toString();
+				String month11=commonth.getSelectedItem().toString();
+				String year1=comyear.getSelectedItem().toString();
+				
+					String dateString=day+"/"+month11+"/"+year;//
+					
+			    String busdata=bustime.getSelectedItem().toString();//
+			    a.isSelected(); b.isSelected(); cc.isSelected(); d.isSelected(); ee.isSelected(); f.isSelected(); g.isSelected(); h.isSelected();
+			    i.isSelected(); j.isSelected(); k.isSelected(); l.isSelected(); m.isSelected(); n.isSelected(); o.isSelected(); p.isSelected();
+			    q.isSelected(); r.isSelected(); s.isSelected(); t.isSelected(); u.isSelected(); v.isSelected(); w.isSelected(); x.isSelected();
+			    y.isSelected(); z.isSelected();
+				
+					
+				}
+			});
+		
+		
+	}
+	
+	
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource()==back)
+		{
+			 Home h=new Home();
+			 h.setVisible(true);
+			 h.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			 h.setSize(1100, 600);
+			 h.setLayout(null);
+			 h.setTitle("TRAVEL");
+			 h.setResizable(false);
+			 h.setBounds(250, 150, 1100, 600);
+			 Container c1=h.getContentPane();
+			 c1.setBackground(Color.GRAY);
+			 this.dispose();
+		}
+	}
+
+}

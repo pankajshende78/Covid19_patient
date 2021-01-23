@@ -1,0 +1,34 @@
+package Pharmacy_management;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+public class user extends JFrame{
+	JButton btn1,btn2,btn3,btn4;
+	
+	user()
+	{
+		
+		setLayout(null);
+		btn1=new JButton("book madicine");
+		btn2=new JButton("Available Stock");
+	//	btn3=new JButton("");
+		btn4=new JButton("Logout");
+		
+		
+		add(btn1);
+		add(btn2);
+		add(btn3);
+		add(btn4);
+		
+		
+		
+		
+	}
+		
+	
+	
+	
+
+}

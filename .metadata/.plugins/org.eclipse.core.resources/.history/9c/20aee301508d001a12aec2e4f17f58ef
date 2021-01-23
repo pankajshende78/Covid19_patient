@@ -1,0 +1,103 @@
+package Pharmacy_management;
+
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.Statement;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+
+import login.adminpage;
+
+public class bookstock extends JFrame implements ActionListener{
+JTextField t1,t2;
+JLabel name,qua;
+JButton submit,back;
+	
+	
+	 bookstock() {
+		 
+		 setLayout(null);
+		 setBounds(250, 150, 1100, 600);
+		 t1=new JTextField();
+		 t2=new JTextField();
+		 
+		 name=new JLabel("Enter Medicine Name ");
+		 qua=new JLabel("Enter Quantity");
+		 
+		 
+		 add(t1);
+		 add(t2);
+		 add(name);
+		 add(qua);
+		 
+		    name.setBounds(20, 20, 150, 30);
+			t1.setBounds(170, 22, 150, 25);
+			
+			qua.setBounds(20, 130, 100,28);
+			t2.setBounds(150, 135, 150, 25);
+			
+		
+			submit.addActionListener(this);
+			back.addActionListener(this);
+			
+		 
+		 
+		
+	}
+
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource()==submit)
+		{
+			String destination=t1.getText();
+			String fare=t2.getText();
+			
+			try {
+				int i;
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/faretable","root","root");
+			Statement st=con.createStatement();
+			PreparedStatement pst=con.prepareStatement("insert into farewindow values(?,?)");
+			pst.setString(1, destination);
+			pst.setString(2, fare);
+			
+			pst.executeUpdate();
+		   }
+			catch(Exception ep)
+			{
+				JOptionPane.showMessageDialog(null, ep);
+			}
+		}
+		if(e.getSource()==back1)
+		{
+			 adminpage h1=new adminpage();
+			 h1.setVisible(true);
+			 h1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			 h1.setSize(1100, 600);
+			 h1.setLayout(null);
+			 h1.setTitle("ADMIN");
+			 h1.setResizable(false);
+			 h1.setBounds(250, 150, 1100, 600);
+			 Container c1=h1.getContentPane();
+			 c1.setBackground(Color.GRAY);
+			 this.dispose();
+		}
+
+		
+	}
+	
+	
+	
+
+}

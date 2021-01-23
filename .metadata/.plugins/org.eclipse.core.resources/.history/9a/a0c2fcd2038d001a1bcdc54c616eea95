@@ -1,0 +1,22 @@
+package Pharmacy_management;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JTable;
+
+public class available_stock extends JFrame {
+	
+	
+	JTable table;
+	JButton b1;
+	  
+			
+	
+		
+		
+			available_stock(){
+		  
+		
+		  
+			}
+}

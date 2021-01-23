@@ -1,0 +1,4 @@
+browser-choice=0
+browsers=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<web-browsers current\="0">\r\n<system/>\r\n<external location\="C\:\\Program Files\\Internet Explorer\\iexplore.exe" name\="Internet Explorer"/>\r\n<external location\="C\:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe" name\="Chrome"/>\r\n</web-browsers>
+eclipse.preferences.version=1
+internalWebBrowserHistory=http\://localhost\:8080/webreq/pankaj1.jsp|*|http\://localhost\:8080/webreq/index.html|*|http\://localhost\:8080/webreq/pankaj|*|http\://localhost\:8080/webreq/login|*|http\://localhost\:8080/webreq/suc.jsp|*|http\://localhost\:8080/webreq/vote|*|http\://localhost\:8080/webreq/user.html|*|http\://localhost\:8080/webreq/admin|*|http\://localhost\:8080/webreq/WEB-INF/classes/p1/Saveservlet.java|*|http\://localhost\:8080/webreq/|*|

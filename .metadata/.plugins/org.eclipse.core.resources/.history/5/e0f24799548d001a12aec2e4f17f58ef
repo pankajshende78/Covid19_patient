@@ -1,0 +1,23 @@
+package Pharmacy_management;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JTable;
+
+public class vieworder extends JFrame{
+	
+	JTable table;
+	JButton b1;
+	  
+			String  x []= {"Medicine Name ","Quantity"};
+			String y[][]=new String [50][50];
+	
+		
+		
+			vieworder(){
+		  
+		  setTitle("Orders");
+		  setBounds(700, 200, 350, 500);
+			}
+
+}

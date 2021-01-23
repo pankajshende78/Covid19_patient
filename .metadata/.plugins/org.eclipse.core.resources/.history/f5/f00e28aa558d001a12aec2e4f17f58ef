@@ -1,0 +1,101 @@
+package Pharmacy_management;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+
+public class vieworder extends JFrame implements ActionListener{
+	
+	JTable table;
+	JButton b1;
+	  
+			String  x []= {"Medicine Name ","Quantity"};
+			String y[][]=new String [50][50];
+	
+		
+		
+			vieworder(){
+		  
+		  setTitle("Orders");
+		  setBounds(700, 200, 350, 500);
+		  
+		  
+		  try
+		    {
+		  
+			int i=0,j=0;
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/pankaj","root","root");
+			Statement st=con.createStatement();
+			//PreparedStatement pst=con.prepareStatement("select * from busdata");
+			ResultSet rs=st.executeQuery("select * from mediup1");
+			
+			
+			while(rs.next())
+			{
+				y[i][j++]=rs.getString("medicinename");
+				y[i][j++]=rs.getString("quan");
+				
+				i++;
+				j=0;
+				
+				
+			}
+		    }catch(Exception ee)
+		     {
+		    	
+		    	
+		    	JOptionPane.showMessageDialog(null, ee);
+		    	
+		    	
+		     }
+		  
+		  
+		        b1=new JButton("BACK");
+		        add(b1,"South");
+		      
+		       JScrollPane sp=new JScrollPane(table);
+		       add(sp);
+		       b1.addActionListener(this);
+		       
+		       
+		    }
+
+
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				 if(e.getSource()==b1)
+				 {
+					 adminpage h1=new adminpage();
+					 h1.setVisible(true);
+					 h1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+					 h1.setSize(1100, 600);
+					 h1.setLayout(null);
+					 h1.setTitle("ADMIN");
+					 h1.setResizable(false);
+					 h1.setBounds(250, 150, 1100, 600);
+					 this.dispose();
+					 
+				 }
+		
+				
+			}
+			
+		    
+			
+		  
+			
+
+			
+
+}

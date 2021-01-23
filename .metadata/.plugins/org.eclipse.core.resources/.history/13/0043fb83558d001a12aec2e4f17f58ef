@@ -1,0 +1,56 @@
+package Pharmacy_management;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
+
+
+public class adminpage extends JFrame implements ActionListener {
+	JButton btn1,btn2,btn3,btn4,btn5;
+	
+	adminpage()
+	{
+		setLayout(null);
+		btn1=new JButton("View Orders");
+		btn2=new JButton("Enter Medicine");
+	
+		btn5=new JButton("Logout");
+		
+		add(btn1);
+		add(btn2);
+		
+		add(btn5);
+		
+		btn1.setBounds(70, 80, 190, 65);
+		btn2.setBounds(310, 80, 190, 65);
+		
+		btn5.setBounds(880, 490, 100, 40);
+		
+		btn1.addActionListener(this);
+		btn2.addActionListener(this);
+        btn5.addActionListener(this);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+	
+		 if(e.getSource()==btn1)
+		 {
+//             userdata v=new userdata();
+//			 v.setVisible(true);
+//			 v.setDefaultCloseOperation(v.EXIT_ON_CLOSE);
+//			 this.dispose();
+		 }
+		  if(e.getSource()==btn2)
+		 {
+//			  bookingdata u=new bookingdata();
+//				u.setVisible(true);
+//				this.dispose();
+		 }
+		
+	}
+
+}

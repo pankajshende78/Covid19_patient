@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;manifest.mf&apos; to &apos;SugamaTesting.dat&apos;&#x0D;&#x0A;- Original project: &apos;bus ticket booking system in java&apos;&#x0D;&#x0A;- Destination element: &apos;SugamaTesting.dat&apos;&#x0D;&#x0A;- Original element: &apos;manifest.mf&apos;" description="Copy file" element1="manifest.mf" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1580020976659" target="/bus ticket booking system in java/SugamaTesting.dat" units="0" version="1.0"/>
+</session>

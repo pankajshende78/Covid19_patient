@@ -1,0 +1,51 @@
+package Pharmacy_management;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+
+public class bookstock extends JFrame {
+JTextField t1,t2;
+JLabel name,qua;
+JButton submit,back;
+	
+	
+	 bookstock() {
+		 
+		 setLayout(null);
+		 setBounds(250, 150, 1100, 600);
+		 t1=new JTextField();
+		 t2=new JTextField();
+		 
+		 name=new JLabel("Enter Medicine Name ");
+		 qua=new JLabel("Enter Quantity");
+		 
+		 
+		 add(t1);
+		 add(t2);
+		 add(name);
+		 add(qua);
+		 
+		   name.setBounds(20, 20, 150, 30);
+			t1.setBounds(170, 22, 150, 25);
+			
+			qua.setBounds(20, 130, 100,28);
+			t2.setBounds(150, 135, 150, 25);
+			
+		
+			insert.addActionListener(this);
+			
+			
+			back.addActionListener(this);
+			
+		 
+		 
+		
+	}
+	
+	
+	
+
+}
