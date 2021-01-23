@@ -1,7 +1,0 @@
-package Pharmacy_management;
-
-import javax.swing.JFrame;
-
-public class newaccount extends JFrame {
-
-}

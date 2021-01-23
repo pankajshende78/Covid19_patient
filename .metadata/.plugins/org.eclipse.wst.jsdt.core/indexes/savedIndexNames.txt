@@ -1,8 +1,0 @@
-INDEX VERSION 1.4+C:\Users\Hp\Documents\Apple\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-2893227274.index
-1618941170.index
-4046251174.index
-3920509701.index
-3342779399.index
-3136864422.index
-4009037079.index

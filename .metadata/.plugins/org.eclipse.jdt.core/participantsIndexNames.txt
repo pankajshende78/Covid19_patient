@@ -1,5 +1,0 @@
-INDEX VERSION 1.131
-C:\Users\Hp\Documents\Apple\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1585610124.index
-\webreq\src
-C:\Users\Hp\Documents\Apple\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2755278958.index
-\webreq\src
